@@ -12,16 +12,9 @@ int _printf(const char *format, ...)
 	va_list arg_list;
 
 	va_start(arg_list, format);
-
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] == '%' && format[i + 1] == '%')
-		{
-			_putchar('%');
-			in_length++;
-			i++;
-		}
-		else if (format[i] == '%' && format[i + 1] != '%')
+		if (format[i] == '%')
 		{
 			in_length = switch_statement(arg_list, format[i + 1], in_length);
 			i++;
