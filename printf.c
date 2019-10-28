@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i] == '%' && format[i + 1] != '%')
 		{
-			in_length = switch_statement(arg_list, format[i + 1], in_length);
+			in_length = switch_statement(arg_list, format[i + 1], &in_length);
 			i++;
 		}
 		else

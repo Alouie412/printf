@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-int switch_statement(va_list arg, char symbol, int in_length)
+int switch_statement(va_list arg, char symbol, int *in_length)
 {
 	switch (symbol)
 	{
