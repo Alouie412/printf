@@ -6,11 +6,12 @@
  *
  * Return: Returns the input string length
  */
-int _printChar(va_list args, int *inlength)
+int print_char(va_list args, int *inlength)
 {	
 	char a;
 	a = va_arg(args, int);
 
 	_putchar(a);
-	return(++*inlength);
+	*inlength += 1;
+	return(*inlength);
 }

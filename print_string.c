@@ -8,8 +8,11 @@ int print_string(va_list arg, int *in_length)
 	string = va_arg(arg, char *);
 
 	for (i = 0; string[i]; i++)
+	{
 		_putchar(string[i]);
+	}
 
-	in_length = in_length + i + 1;
+	*in_length += i;
+
 	return (*in_length);
 }
