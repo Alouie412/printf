@@ -18,6 +18,7 @@ int switch_statement(va_list arg, char symbol, int in_length)
 		default: 
 			_putchar('%');
 			_putchar(symbol);
+			in_length++;
 	}
     return (in_length);
 }
