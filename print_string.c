@@ -1,5 +1,11 @@
 #include "holberton.h"
 
+/**
+ * print_string - Helper function that prints a string
+ * @arg: va_list passed in from printf.c
+ * @in_length: Variable that holds the number of char printed
+ * Return: The number of characters printed in this function
+ */
 int print_string(va_list arg, int *in_length)
 {
 	int i;
