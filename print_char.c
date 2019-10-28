@@ -12,5 +12,5 @@ int _printChar(va_list args, int *inlength)
 	a = va_arg(args, int);
 
 	_putchar(a);
-	return(++inlength);
+	return(++*inlength);
 }
