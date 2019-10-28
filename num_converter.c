@@ -1,5 +1,11 @@
 #include "holberton.h"
-
+/**
+ *count_digits - counts the number of digits in the number
+ *
+ * @a: the integer of which digits will be counted
+ *
+ * Return: Recursively returns no. of digits
+ */
 int count_digits(unsigned int a)
 {
 	if (a < 10)
@@ -7,7 +13,14 @@ int count_digits(unsigned int a)
 
 	return (1 + count_digits(a / 10));
 }
-
+/**
+ *num_converter - converts numbers into a string
+ *
+ * @a: integer passed for conversion
+ * @b: base of the number passed
+ *
+ * Return: Pointer to the address of string created
+ */
 char *num_converter(unsigned int a, int b)
 {
 	char *ptr = NULL;
@@ -18,13 +31,13 @@ char *num_converter(unsigned int a, int b)
 	ptr = malloc(count * sizeof(char));
 
 	if (ptr == NULL)
-		return NULL;
+		return (NULL);
 
 	ptr[count] = '\0';
 	for (count -= 1; count >= 0; count--)
 	{
 		ptr[count] = a % b;
-		a /= b;	
+		a /= b;
 	}
 
 	return (ptr);

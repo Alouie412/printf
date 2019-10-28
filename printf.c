@@ -1,5 +1,11 @@
 #include "holberton.h"
-
+/**
+ *_printf - prints a string to stdout
+ *
+ * @format: string that is passed with specifiers
+ *
+ * Return: Returns length of string
+ */
 int _printf(const char *format, ...)
 {
 	int i, in_length = 0;

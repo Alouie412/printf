@@ -1,5 +1,13 @@
 #include "holberton.h"
-
+/**
+ *print_num - prints the number passed
+ *
+ * @arg: argument that is passed
+ * @in_length: length of i/p string
+ * @ltr: character of the format specifier
+ *
+ * Return: Returns string length
+ */
 int print_num(va_list arg, int *in_length, char ltr)
 {
 	int num, count;
@@ -22,10 +30,7 @@ int print_num(va_list arg, int *in_length, char ltr)
 		if (ltr == 'o')
 			ptr = num_converter(num, 8);
 	}
-	/*
-	else if (ltr == 'x' || ltr == 'X')
-	  ptr == num_converter(num, 16);
-	*/
+
 	count = count_digits(num);
 	out_num(ptr, count, in_length);
 	return (*in_length);
