@@ -14,6 +14,10 @@ int switch_statement(va_list arg, char symbol, int in_length)
 		case 'i':
 			print_num(arg, &in_length, symbol);
 			break;
+
+		default: 
+			_putchar('%');
+			_putchar(symbol);
 	}
     return (in_length);
 }
