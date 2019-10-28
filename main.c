@@ -12,7 +12,7 @@ int main(void)
   printf("Testing printf\n");
   len = printf("%%, %s, %c, awesome, %d, %i\n", "Hello Holberton", 'h', ui, -525600);
 
-  printf("Testing _printf\n");
+  _printf("Testing _printf\n");
   len2 = _printf("%%, %s, %c, awesome, %d, %i\n", "Hello Holberton", 'h', ui, -525600);
 
   printf("Printf. len: %d, len2: %i\n", len, len2);
