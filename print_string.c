@@ -8,7 +8,7 @@
  * Return: No return type
  */
 void rev_string(char *s, int length)
-{
+{	
 	int j;
 	char temp;
 
@@ -68,7 +68,8 @@ int print_string(va_list arg, int *in_length, char ltr)
 		length++;
 
 	ptr = malloc(length * sizeof(char));
-
+	if (ptr == NULL)
+		return (NULL);
 	for (i = 0; i < length; i++)
 		ptr[i] = string[i];
 
