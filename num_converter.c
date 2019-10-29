@@ -34,6 +34,7 @@ char *num_converter(unsigned int a, unsigned int b)
 		return (NULL);
 
 	ptr[count] = '\0';
+
 	for (count -= 1; count >= 0; count--)
 	{
 		ptr[count] = a % b;
