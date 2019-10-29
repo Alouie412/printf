@@ -24,6 +24,12 @@ char *bnten(int num, char ltr, unsigned int *base)
 		*base = 2;
 		ptr = num_converter(num, base);
 	}
+	else if (ltr == 'x')
+	{
+		*base = 16;
+		ptr = num_converter(num, base)
+
+	}
 	return (ptr);
 }
 /**
