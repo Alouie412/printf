@@ -11,8 +11,7 @@ int print_char(va_list args, int *inlength)
 	char a;
 
 	a = va_arg(args, int);
-	if (a == NULL)
-		return (-1);
+
 	_putchar(a);
 	*inlength += 1;
 	return (*inlength);
