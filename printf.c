@@ -18,7 +18,12 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			in_length = switch_statement(arg_list, format[i + 1], in_length);
+			if (format[i + 1] == 'c' || format[i + 1] == 's' ||
+			format[i + 1] == 'r' || format[i + 1] == 'R' ||
+			format[i + 1] == '%')
+				in_length = switch_char(arg_list, format[i + 1], in_length);
+			else
+				in_length = switch_num(arg_list, format[i + 1], in_length);
 			i++;
 		}
 		else
