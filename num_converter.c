@@ -6,12 +6,12 @@
  *
  * Return: Recursively returns no. of digits
  */
-int count_digits(unsigned int a)
+int count_digits(unsigned int a, int b)
 {
-	if (a < 10)
+	if (a < b)
 		return (1);
 
-	return (1 + count_digits(a / 10));
+	return (1 + count_digits(a / b));
 }
 /**
  *num_converter - converts numbers into a string
