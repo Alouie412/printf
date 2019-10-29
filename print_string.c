@@ -12,12 +12,10 @@ void rev_string(char *s, int length)
 	int j;
 	char temp;
 
-	printf("We are here.\n");
 	length--;
 
 	for (j = 0; j <= length; j++, length--)
 	{
-		printf("Test.\n");
 		temp = s[j];
 		s[j] = s[length];
 		s[length] = temp;
@@ -37,7 +35,6 @@ char *rot13(char *str, int length)
 	char altALPHA[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	int i, j;
 
-	printf("We are right here.\n");
 	for (i = 0; i < length; i++)
 	{
 		for (j = 0; regALPHA[j]; j++)
