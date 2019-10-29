@@ -6,7 +6,7 @@
  *
  * Return: Recursively returns no. of digits
  */
-int count_digits(unsigned int a, int b)
+int count_digits(unsigned int a, unsigned int b)
 {
 	if (a < b)
 		return (1);
