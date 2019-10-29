@@ -26,7 +26,7 @@ char *num_converter(unsigned int a, unsigned int b)
 	char *ptr = NULL;
 	int count;
 
-	count = count_digits(a);
+	count = count_digits(a, b);
 
 	ptr = malloc(count * sizeof(char));
 
