@@ -12,7 +12,8 @@ int print_string(va_list arg, int *in_length)
 	char *string;
 
 	string = va_arg(arg, char *);
-
+	if (string == NULL)
+		return (-1);
 	for (i = 0; string[i]; i++)
 	{
 		_putchar(string[i]);
