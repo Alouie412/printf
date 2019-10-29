@@ -6,12 +6,12 @@
  *
  * Return: Recursively returns no. of digits
  */
-int count_digits(unsigned int a, unsigned int b)
+int count_digits(unsigned int a, unsigned int *b)
 {
-	if (a < b)
+	if (a < *b)
 		return (1);
 
-	return (1 + count_digits(a / b, b));
+	return (1 + count_digits(a / *b, b));
 }
 /**
  *num_converter - converts numbers into a string
@@ -21,7 +21,7 @@ int count_digits(unsigned int a, unsigned int b)
  *
  * Return: Pointer to the address of string created
  */
-char *num_converter(unsigned int a, unsigned int b)
+char *num_converter(unsigned int a, unsigned int *b)
 {
 	char *ptr = NULL;
 	int count;
@@ -37,8 +37,8 @@ char *num_converter(unsigned int a, unsigned int b)
 
 	for (count -= 1; count >= 0; count--)
 	{
-		ptr[count] = a % b;
-		a /= b;
+		ptr[count] = a % *b;
+		a /= *b;
 	}
 
 	return (ptr);
