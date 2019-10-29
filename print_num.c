@@ -10,7 +10,7 @@
  */
 int print_num(va_list arg, int *in_length, char ltr)
 {
-	int num, count;
+	int num, count, base = 10;
 	char *ptr;
 
 	if (ltr == 'd' || ltr == 'i')
@@ -22,22 +22,26 @@ int print_num(va_list arg, int *in_length, char ltr)
 			_putchar('-');
 			*in_length += 1;
 		}
-		ptr = num_converter(num, 10);
+		ptr = num_converter(num, base);
 	}
 
 	if (ltr == 'b')
 	{
 		num = va_arg(arg, unsigned int);
-		ptr = num_converter(num, 2);
+		base = 2;
+		ptr = num_converter(num, base);
 	}
 	else if (ltr == 'o' || ltr == 'x' || ltr == 'X' || ltr == 'u')
 	{
 		num = va_arg(arg, unsigned int);
 		if (ltr == 'o')
-			ptr = num_converter(num, 8);
+		{
+			base = 8;
+			ptr = num_converter(num, base);
+		}
 	}
 
-	count = count_digits(num);
+	count = count_digits(num, base);
 	out_num(ptr, count, in_length);
 	return (*in_length);
 }
