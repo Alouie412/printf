@@ -1,4 +1,23 @@
 #include "holberton.h"
+
+char *bnten(int num, char ltr, unsigned int *base)
+{
+	char *ptr = NULL;
+
+	if (ltr == 'u')
+		ptr = num_converter(num, base);
+	else if (ltr == 'o')
+	{
+		*base = 8;
+		ptr = num_converter(num, base);
+	}
+	else if (ltr == 'b')
+	{
+		*base = 2;
+		ptr = num_converter(num, base);
+	}
+	return (ptr);
+}
 /**
  *print_num - prints the number passed
  *
@@ -10,8 +29,9 @@
  */
 int print_num(va_list arg, int *in_length, char ltr)
 {
-	int num, count, base = 10;
-	char *ptr;
+	int num, count;
+	unsigned int base = 10;
+	char *ptr = NULL;
 
 	if (ltr == 'd' || ltr == 'i')
 	{
@@ -22,26 +42,14 @@ int print_num(va_list arg, int *in_length, char ltr)
 			_putchar('-');
 			*in_length += 1;
 		}
-		ptr = num_converter(num, base);
+		ptr = num_converter(num, &base);
 	}
-
-	if (ltr == 'b')
+	else if (ltr == 'o' || ltr == 'x' || ltr == 'X' || ltr == 'u' || ltr == 'b')
 	{
 		num = va_arg(arg, unsigned int);
-		base = 2;
-		ptr = num_converter(num, base);
+		ptr = bnten(num, ltr, &base);
 	}
-	else if (ltr == 'o' || ltr == 'x' || ltr == 'X' || ltr == 'u')
-	{
-		num = va_arg(arg, unsigned int);
-		if (ltr == 'o')
-		{
-			base = 8;
-			ptr = num_converter(num, base);
-		}
-	}
-
-	count = count_digits(num, base);
+	count = count_digits(num, &base);
 	out_num(ptr, count, in_length);
 	return (*in_length);
 }
