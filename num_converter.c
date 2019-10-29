@@ -3,7 +3,7 @@
  *count_digits - counts the number of digits in the number
  *
  * @a: the integer of which digits will be counted
- *
+ * @b: base of the number passed
  * Return: Recursively returns no. of digits
  */
 int count_digits(unsigned int a, unsigned int *b)

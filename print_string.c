@@ -1,5 +1,12 @@
 #include "holberton.h"
-
+/**
+ *rev_string - prints the reversed string
+ *
+ * @s: string that is passed
+ * @length: length of the string
+ *
+ * Return: No return type
+ */
 void rev_string(char *s, int length)
 {
 	int j;
@@ -10,13 +17,20 @@ void rev_string(char *s, int length)
 
 	for (j = 0; j <= length; j++, length--)
 	{
-	  printf("Test.\n");
+		printf("Test.\n");
 		temp = s[j];
 		s[j] = s[length];
 		s[length] = temp;
 	}
 }
-
+/**
+ *rot13 - pushes the character by 13 untis forward
+ *
+ * @str: string that is passed
+ * @length: lenght of the string that is passed
+ *
+ * Return: pointer to the string modified
+ */
 char *rot13(char *str, int length)
 {
 	char regALPHA[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -42,6 +56,7 @@ char *rot13(char *str, int length)
  * print_string - Helper function that prints a string
  * @arg: va_list passed in from printf.c
  * @in_length: Variable that holds the number of char printed
+ * @ltr: the identifier that was called/used
  * Return: The number of characters printed in this function
  */
 int print_string(va_list arg, int *in_length, char ltr)

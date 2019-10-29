@@ -1,5 +1,13 @@
 #include "holberton.h"
-
+/**
+ *bnten - function to handle numbers of base not 10
+ *
+ * @num: number that is passed
+ * @ltr: symbol/identifier that is passed
+ * @base: base of the number passed
+ *
+ * Return: Pointer to the converted number string
+ */
 char *bnten(int num, char ltr, unsigned int *base)
 {
 	char *ptr = NULL;
