@@ -21,7 +21,7 @@ int count_digits(unsigned int a, unsigned int b)
  *
  * Return: Pointer to the address of string created
  */
-char *num_converter(unsigned int a, int b)
+char *num_converter(unsigned int a, unsigned int b)
 {
 	char *ptr = NULL;
 	int count;
