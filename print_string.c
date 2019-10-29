@@ -1,32 +1,32 @@
 #include "holberton.h"
 
-void rev_string(char *s)
+void rev_string(char *s, int length)
 {
-	int i = 0, j;
+	int j;
 	char temp;
 
-	while (s[i] != '\0')
-	i++;
+	printf("We are here.\n");
+	length--;
 
-	i--;
-
-	for (j = 0; j <= i; j++, i--)
+	for (j = 0; j <= length; j++, length--)
 	{
+	  printf("Test.\n");
 		temp = s[j];
-		s[j] = s[i];
-		s[i] = temp;
+		s[j] = s[length];
+		s[length] = temp;
 	}
 }
 
-char *rot13(char *str)
+char *rot13(char *str, int length)
 {
 	char regALPHA[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char altALPHA[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	int i, j;
 
-	for (i = 0; str[i] != '\0'; i++)
+	printf("We are right here.\n");
+	for (i = 0; i < length; i++)
 	{
-		for (j = 0; regALPHA[j] != '\0'; j++)
+		for (j = 0; regALPHA[j]; j++)
 		{
 			if (str[i] == regALPHA[j])
 			{
@@ -46,22 +46,31 @@ char *rot13(char *str)
  */
 int print_string(va_list arg, int *in_length, char ltr)
 {
-	int i;
-	char *string;
+	int i, length = 0;
+	char *string = NULL;
+	char *ptr = NULL;
 
 	string = va_arg(arg, char *);
 
-	if (ltr == 'r')
-		rev_string(string);
-	else if (ltr == 'R')
-		rot13(string);
-
 	for (i = 0; string[i]; i++)
+		length++;
+
+	ptr = malloc(length * sizeof(char));
+
+	for (i = 0; i < length; i++)
+		ptr[i] = string[i];
+
+	if (ltr == 'r')
+		rev_string(ptr, length);
+	else if (ltr == 'R')
+		rot13(ptr, length);
+
+	for (i = 0; ptr[i]; i++)
 	{
-		_putchar(string[i]);
+		_putchar(ptr[i]);
 	}
 
 	*in_length += i;
-
+	free(ptr);
 	return (*in_length);
 }

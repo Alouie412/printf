@@ -16,5 +16,7 @@ int print_num(va_list, int *, char);
 char *num_converter(unsigned int, unsigned int);
 int count_digits(unsigned int, unsigned int);
 int out_num(char *, int, int *);
+void rev_string(char *, int);
+char *rot13(char *, int);
 
 #endif
