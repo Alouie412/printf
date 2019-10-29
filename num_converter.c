@@ -29,10 +29,10 @@ char *num_converter(unsigned int a, unsigned int b)
 	count = count_digits(a, b);
 
 	ptr = malloc(count * sizeof(char));
-	printf("%p\n", ptr);
+
 	if (ptr == NULL)
 		return (NULL);
-	printf("Test.\n");
+
 	ptr[count] = '\0';
 
 	for (count -= 1; count >= 0; count--)

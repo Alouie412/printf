@@ -2,8 +2,8 @@
 
 char *bnten(int num, char ltr)
 {
-	int base = 10;
 	char *ptr = NULL;
+	int base = 10;
 
 	if (ltr == 'u')
 		ptr = num_converter(num, base);
@@ -30,7 +30,8 @@ char *bnten(int num, char ltr)
  */
 int print_num(va_list arg, int *in_length, char ltr)
 {
-	int num, count, base = 10;
+	int num, count;
+	int base = 10;
 	char *ptr = NULL;
 
 	if (ltr == 'd' || ltr == 'i')
@@ -47,9 +48,8 @@ int print_num(va_list arg, int *in_length, char ltr)
 	else if (ltr == 'o' || ltr == 'x' || ltr == 'X' || ltr == 'u' || ltr == 'b')
 	{
 		num = va_arg(arg, unsigned int);
-		bnten(num, ltr);
+		ptr = bnten(num, ltr);
 	}
-	printf("%p\n", ptr);
 	count = count_digits(num, base);
 	out_num(ptr, count, in_length);
 	return (*in_length);
