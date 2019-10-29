@@ -1,9 +1,8 @@
 #include "holberton.h"
 
-char *bnten(int num, char ltr)
+char *bnten(int num, char ltr, unsigned int *base)
 {
 	char *ptr = NULL;
-	int base = 10;
 
 	if (ltr == 'u')
 		ptr = num_converter(num, base);
@@ -48,7 +47,7 @@ int print_num(va_list arg, int *in_length, char ltr)
 	else if (ltr == 'o' || ltr == 'x' || ltr == 'X' || ltr == 'u' || ltr == 'b')
 	{
 		num = va_arg(arg, unsigned int);
-		ptr = bnten(num, ltr);
+		ptr = bnten(num, ltr, &base);
 	}
 	count = count_digits(num, base);
 	out_num(ptr, count, in_length);
