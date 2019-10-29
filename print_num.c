@@ -27,7 +27,7 @@ int print_num(va_list arg, int *in_length, char ltr)
 
 	if (ltr == 'b')
 	{
-		num = va_arg(arg, unsigned int)
+		num = va_arg(arg, unsigned int);
 		ptr = num_converter(num, 2);
 	}
 	else if (ltr == 'o' || ltr == 'x' || ltr == 'X' || ltr == 'u')
