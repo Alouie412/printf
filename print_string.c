@@ -8,7 +8,7 @@
  * Return: No return type
  */
 void rev_string(char *s, int length)
-{	
+{
 	int j;
 	char temp;
 
