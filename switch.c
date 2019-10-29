@@ -11,7 +11,7 @@
 int switch_statement(va_list arg, char symbol, int in_length)
 {
 	switch (symbol)
-	{	
+	{
 		case 'b':
 			print_num(arg, &in_length, symbol);
 			break;
@@ -22,11 +22,29 @@ int switch_statement(va_list arg, char symbol, int in_length)
 		case 'c':
 			print_char(arg, &in_length);
 			break;
+		case 'R':
+			print_string(arg, &in_length, symbol);
+			break;
+		case 'r':
+			print_string(arg, &in_length, symbol);
+			break;
 		case 's':
-			print_string(arg, &in_length);
+			print_string(arg, &in_length, symbol);
 			break;
 		case 'd':
 		case 'i':
+			print_num(arg, &in_length, symbol);
+			break;
+		case 'u':
+			print_num(arg, &in_length, symbol);
+			break;
+		case 'o':
+			print_num(arg, &in_length, symbol);
+			break;
+		case 'x':
+			print_num(arg, &in_length, symbol);
+			break;
+		case 'X':
 			print_num(arg, &in_length, symbol);
 			break;
 		default:

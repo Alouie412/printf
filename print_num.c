@@ -11,7 +11,7 @@
 int print_num(va_list arg, int *in_length, char ltr)
 {
 	int num, count, base = 10;
-	char *ptr;
+	char *ptr = NULL;
 
 	if (ltr == 'd' || ltr == 'i')
 	{
@@ -24,21 +24,21 @@ int print_num(va_list arg, int *in_length, char ltr)
 		}
 		ptr = num_converter(num, base);
 	}
-
-	if (ltr == 'b')
+	else if (ltr == 'o' || ltr == 'x' || ltr == 'X' || ltr == 'u' || ltr == 'b')
 	{
 		num = va_arg(arg, unsigned int);
-		base = 2;
-		ptr = num_converter(num, base);
-	}
-	else if (ltr == 'o' || ltr == 'x' || ltr == 'X' || ltr == 'u')
-	{
-		num = va_arg(arg, unsigned int);
-		if (ltr == 'o')
+		if(ltr == 'b')
+		{
+			base = 2;
+			ptr = num_converter(num, base);
+		}
+		else if (ltr == 'o')
 		{
 			base = 8;
 			ptr = num_converter(num, base);
 		}
+		else if (ltr == 'u')
+			ptr = num_converter(num, base);
 	}
 
 	count = count_digits(num, base);
