@@ -24,6 +24,12 @@ int print_num(va_list arg, int *in_length, char ltr)
 		}
 		ptr = num_converter(num, 10);
 	}
+
+	if (ltr == 'b')
+	{
+		num = va_arg(arg, unsigned int)
+		ptr = num_converter(num, 2);
+	}
 	else if (ltr == 'o' || ltr == 'x' || ltr == 'X' || ltr == 'u')
 	{
 		num = va_arg(arg, unsigned int);
