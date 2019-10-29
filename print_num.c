@@ -49,7 +49,7 @@ int print_num(va_list arg, int *in_length, char ltr)
 		num = va_arg(arg, unsigned int);
 		bnten(num, ltr);
 	}
-
+	printf("%p\n", ptr);
 	count = count_digits(num, base);
 	out_num(ptr, count, in_length);
 	return (*in_length);
