@@ -64,6 +64,12 @@ int print_string(va_list arg, int *in_length, char ltr)
 
 	string = va_arg(arg, char *);
 
+	if (string == NULL)
+	{
+		write(1, "(null)", 6);
+		return (*in_length + 6);
+	}
+
 	for (i = 0; string[i]; i++)
 		length++;
 

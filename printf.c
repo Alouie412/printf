@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 			format[i + 1] == 'r' || format[i + 1] == 'R' ||
 			format[i + 1] == '%')
 				in_length = switch_char(arg_list, format[i + 1], in_length);
-			else
+			else if (format[i + 1] != '\0')
 				in_length = switch_num(arg_list, format[i + 1], in_length);
 			i++;
 		}
