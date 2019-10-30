@@ -27,8 +27,12 @@ char *bnten(int num, char ltr, unsigned int *base)
 	else if (ltr == 'x')
 	{
 		*base = 16;
-		ptr = num_converter(num, base)
-
+		ptr = hex_converter(num, base, ltr);
+	}
+	else if (ltr == 'X')
+	{
+		*base = 16;
+		ptr = hex_converter(num, base, ltr);
 	}
 	return (ptr);
 }
@@ -65,5 +69,6 @@ int print_num(va_list arg, int *in_length, char ltr)
 	}
 	count = count_digits(num, &base);
 	out_num(ptr, count, in_length);
+
 	return (*in_length);
 }
